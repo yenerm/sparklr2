@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="14" failures="0" name="org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests" time="0.155" errors="7" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.131-b11"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/yenerm/Development/repo/spring-security-oauth"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/yenerm/Development/repo/spring-security-oauth/samples/oauth2/sparklr"/>
+    <property name="java.runtime.version" value="1.8.0_131-b11"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/59/j4w24bjd6dgfj3_hj0jwk69800f8kn/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/Users/yenerm/Development/sdk/apache-maven-3.5.0/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/yenerm/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="maven.conf" value="/Users/yenerm/Development/sdk/apache-maven-3.5.0/conf"/>
+    <property name="altSnapshotDeploymentRepository" value="repo.spring.io::default::https://repo.spring.io/libs-snapshot-local"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.12.6"/>
+    <property name="library.jansi.path" value="/Users/yenerm/Development/sdk/apache-maven-3.5.0/lib/jansi-native/osx64"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/yenerm"/>
+    <property name="user.timezone" value="America/Los_Angeles"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="yenerm"/>
+    <property name="java.class.path" value="/Users/yenerm/Development/sdk/apache-maven-3.5.0/boot/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher jetty:run-exploded -Dskiptests"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="skiptests" value="true"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_131"/>
+    <property name="java.ext.dirs" value="/Users/yenerm/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/Users/yenerm/Development/sdk/apache-maven-3.5.0"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.security.egd" value="file:/dev/./urandom"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests" name="testUserDeniesConfirmation" time="0.008">
+    <error message="A redirect is required to get the users approval" type="org.springframework.security.oauth2.client.resource.UserRedirectRequiredException">org.springframework.security.oauth2.client.resource.UserRedirectRequiredException: A redirect is required to get the users approval
+	at org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.getRedirectForAuthorization(AuthorizationCodeAccessTokenProvider.java:358)
+	at org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.obtainAccessToken(AuthorizationCodeAccessTokenProvider.java:205)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.acquireAccessToken(OAuth2RestTemplate.java:221)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.getAccessToken(OAuth2RestTemplate.java:173)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.createRequest(OAuth2RestTemplate.java:105)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:547)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.doExecute(OAuth2RestTemplate.java:128)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:512)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:454)
+	at org.springframework.security.oauth2.provider.ServerRunning.getForString(ServerRunning.java:274)
+	at org.springframework.security.oauth2.provider.ServerRunning.getForString(ServerRunning.java:270)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.loginAndGrabCookie(AuthorizationCodeProviderTests.java:369)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.approveAccessTokenGrant(AuthorizationCodeProviderTests.java:400)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.testUserDeniesConfirmation(AuthorizationCodeProviderTests.java:188)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.security.oauth2.provider.ServerRunning$1.evaluate(ServerRunning.java:175)
+	at org.junit.rules.TestWatchman$1.evaluate(TestWatchman.java:53)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+  </testcase>
+  <testcase classname="org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests" name="testRegisteredRedirectWithWrongRequestedRedirect" time="0.01">
+    <error message="A redirect is required to get the users approval" type="org.springframework.security.oauth2.client.resource.UserRedirectRequiredException">org.springframework.security.oauth2.client.resource.UserRedirectRequiredException: A redirect is required to get the users approval
+	at org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.getRedirectForAuthorization(AuthorizationCodeAccessTokenProvider.java:358)
+	at org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.obtainAccessToken(AuthorizationCodeAccessTokenProvider.java:205)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.acquireAccessToken(OAuth2RestTemplate.java:221)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.getAccessToken(OAuth2RestTemplate.java:173)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.createRequest(OAuth2RestTemplate.java:105)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:547)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.doExecute(OAuth2RestTemplate.java:128)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:512)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:454)
+	at org.springframework.security.oauth2.provider.ServerRunning.getForString(ServerRunning.java:274)
+	at org.springframework.security.oauth2.provider.ServerRunning.getForString(ServerRunning.java:270)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.loginAndGrabCookie(AuthorizationCodeProviderTests.java:369)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.approveAccessTokenGrant(AuthorizationCodeProviderTests.java:400)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.testRegisteredRedirectWithWrongRequestedRedirect(AuthorizationCodeProviderTests.java:321)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.security.oauth2.provider.ServerRunning$1.evaluate(ServerRunning.java:175)
+	at org.junit.rules.TestWatchman$1.evaluate(TestWatchman.java:53)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+  </testcase>
+  <testcase classname="org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests" name="testNoClientIdProvided" time="0.026"/>
+  <testcase classname="org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests" name="testNoRedirect" time="0.017"/>
+  <testcase classname="org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests" name="testInsufficientScopeInResourceRequest" time="0.007">
+    <error message="A redirect is required to get the users approval" type="org.springframework.security.oauth2.client.resource.UserRedirectRequiredException">org.springframework.security.oauth2.client.resource.UserRedirectRequiredException: A redirect is required to get the users approval
+	at org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.getRedirectForAuthorization(AuthorizationCodeAccessTokenProvider.java:358)
+	at org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.obtainAccessToken(AuthorizationCodeAccessTokenProvider.java:205)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.acquireAccessToken(OAuth2RestTemplate.java:221)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.getAccessToken(OAuth2RestTemplate.java:173)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.createRequest(OAuth2RestTemplate.java:105)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:547)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.doExecute(OAuth2RestTemplate.java:128)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:512)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:454)
+	at org.springframework.security.oauth2.provider.ServerRunning.getForString(ServerRunning.java:274)
+	at org.springframework.security.oauth2.provider.ServerRunning.getForString(ServerRunning.java:270)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.loginAndGrabCookie(AuthorizationCodeProviderTests.java:369)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.approveAccessTokenGrant(AuthorizationCodeProviderTests.java:400)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.testInsufficientScopeInResourceRequest(AuthorizationCodeProviderTests.java:289)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.security.oauth2.provider.ServerRunning$1.evaluate(ServerRunning.java:175)
+	at org.junit.rules.TestWatchman$1.evaluate(TestWatchman.java:53)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+  </testcase>
+  <testcase classname="org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests" name="testWrongRedirectUri" time="0.007">
+    <error message="A redirect is required to get the users approval" type="org.springframework.security.oauth2.client.resource.UserRedirectRequiredException">org.springframework.security.oauth2.client.resource.UserRedirectRequiredException: A redirect is required to get the users approval
+	at org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.getRedirectForAuthorization(AuthorizationCodeAccessTokenProvider.java:358)
+	at org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.obtainAccessToken(AuthorizationCodeAccessTokenProvider.java:205)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.acquireAccessToken(OAuth2RestTemplate.java:221)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.getAccessToken(OAuth2RestTemplate.java:173)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.createRequest(OAuth2RestTemplate.java:105)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:547)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.doExecute(OAuth2RestTemplate.java:128)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:512)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:454)
+	at org.springframework.security.oauth2.provider.ServerRunning.getForString(ServerRunning.java:274)
+	at org.springframework.security.oauth2.provider.ServerRunning.getForString(ServerRunning.java:270)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.loginAndGrabCookie(AuthorizationCodeProviderTests.java:369)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.approveAccessTokenGrant(AuthorizationCodeProviderTests.java:400)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.testWrongRedirectUri(AuthorizationCodeProviderTests.java:170)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.security.oauth2.provider.ServerRunning$1.evaluate(ServerRunning.java:175)
+	at org.junit.rules.TestWatchman$1.evaluate(TestWatchman.java:53)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+  </testcase>
+  <testcase classname="org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests" name="testInvalidScopeInAuthorizationRequest" time="0.02"/>
+  <testcase classname="org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests" name="testRegisteredRedirectWithWrongOneInTokenEndpoint" time="0.006">
+    <error message="A redirect is required to get the users approval" type="org.springframework.security.oauth2.client.resource.UserRedirectRequiredException">org.springframework.security.oauth2.client.resource.UserRedirectRequiredException: A redirect is required to get the users approval
+	at org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.getRedirectForAuthorization(AuthorizationCodeAccessTokenProvider.java:358)
+	at org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.obtainAccessToken(AuthorizationCodeAccessTokenProvider.java:205)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.acquireAccessToken(OAuth2RestTemplate.java:221)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.getAccessToken(OAuth2RestTemplate.java:173)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.createRequest(OAuth2RestTemplate.java:105)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:547)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.doExecute(OAuth2RestTemplate.java:128)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:512)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:454)
+	at org.springframework.security.oauth2.provider.ServerRunning.getForString(ServerRunning.java:274)
+	at org.springframework.security.oauth2.provider.ServerRunning.getForString(ServerRunning.java:270)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.loginAndGrabCookie(AuthorizationCodeProviderTests.java:369)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.approveAccessTokenGrant(AuthorizationCodeProviderTests.java:400)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.testRegisteredRedirectWithWrongOneInTokenEndpoint(AuthorizationCodeProviderTests.java:332)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.security.oauth2.provider.ServerRunning$1.evaluate(ServerRunning.java:175)
+	at org.junit.rules.TestWatchman$1.evaluate(TestWatchman.java:53)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+  </testcase>
+  <testcase classname="org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests" name="testInvalidAccessToken" time="0.007"/>
+  <testcase classname="org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests" name="testResourceIsProtected" time="0.008"/>
+  <testcase classname="org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests" name="testIllegalAttemptToApproveWithoutUsingAuthorizationRequest" time="0.016"/>
+  <testcase classname="org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests" name="testSuccessfulFlowWithRegisteredRedirect" time="0.008">
+    <error message="A redirect is required to get the users approval" type="org.springframework.security.oauth2.client.resource.UserRedirectRequiredException">org.springframework.security.oauth2.client.resource.UserRedirectRequiredException: A redirect is required to get the users approval
+	at org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.getRedirectForAuthorization(AuthorizationCodeAccessTokenProvider.java:358)
+	at org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.obtainAccessToken(AuthorizationCodeAccessTokenProvider.java:205)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.acquireAccessToken(OAuth2RestTemplate.java:221)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.getAccessToken(OAuth2RestTemplate.java:173)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.createRequest(OAuth2RestTemplate.java:105)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:547)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.doExecute(OAuth2RestTemplate.java:128)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:512)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:454)
+	at org.springframework.security.oauth2.provider.ServerRunning.getForString(ServerRunning.java:274)
+	at org.springframework.security.oauth2.provider.ServerRunning.getForString(ServerRunning.java:270)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.loginAndGrabCookie(AuthorizationCodeProviderTests.java:369)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.approveAccessTokenGrant(AuthorizationCodeProviderTests.java:400)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.testSuccessfulFlowWithRegisteredRedirect(AuthorizationCodeProviderTests.java:244)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.security.oauth2.provider.ServerRunning$1.evaluate(ServerRunning.java:175)
+	at org.junit.rules.TestWatchman$1.evaluate(TestWatchman.java:53)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+  </testcase>
+  <testcase classname="org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests" name="testUnauthenticatedAuthorizationRequestRedirectsToLogin" time="0.009"/>
+  <testcase classname="org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests" name="testSuccessfulAuthorizationCodeFlow" time="0.006">
+    <error message="A redirect is required to get the users approval" type="org.springframework.security.oauth2.client.resource.UserRedirectRequiredException">org.springframework.security.oauth2.client.resource.UserRedirectRequiredException: A redirect is required to get the users approval
+	at org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.getRedirectForAuthorization(AuthorizationCodeAccessTokenProvider.java:358)
+	at org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.obtainAccessToken(AuthorizationCodeAccessTokenProvider.java:205)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.acquireAccessToken(OAuth2RestTemplate.java:221)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.getAccessToken(OAuth2RestTemplate.java:173)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.createRequest(OAuth2RestTemplate.java:105)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:547)
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.doExecute(OAuth2RestTemplate.java:128)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:512)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:454)
+	at org.springframework.security.oauth2.provider.ServerRunning.getForString(ServerRunning.java:274)
+	at org.springframework.security.oauth2.provider.ServerRunning.getForString(ServerRunning.java:270)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.loginAndGrabCookie(AuthorizationCodeProviderTests.java:369)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.approveAccessTokenGrant(AuthorizationCodeProviderTests.java:400)
+	at org.springframework.security.oauth2.provider.AuthorizationCodeProviderTests.testSuccessfulAuthorizationCodeFlow(AuthorizationCodeProviderTests.java:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.security.oauth2.provider.ServerRunning$1.evaluate(ServerRunning.java:175)
+	at org.junit.rules.TestWatchman$1.evaluate(TestWatchman.java:53)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+  </testcase>
+</testsuite>

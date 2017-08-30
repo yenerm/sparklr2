@@ -1,0 +1,5 @@
+org.springframework.security.oauth.examples.sparklr
+org.springframework.security.oauth.examples.sparklr.config
+org.springframework.security.oauth.examples.sparklr.impl
+org.springframework.security.oauth.examples.sparklr.mvc
+org.springframework.security.oauth.examples.sparklr.oauth

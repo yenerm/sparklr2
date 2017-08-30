@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tonr2:war">
+    <output-path>$PROJECT_DIR$/../tonr/target</output-path>
+    <root id="archive" name="tonr2-2.1.2.BUILD-SNAPSHOT.war">
+      <element id="artifact" artifact-name="tonr2:war exploded" />
+    </root>
+  </artifact>
+</component>
